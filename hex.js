@@ -47,17 +47,17 @@ function loadRom(arrayBuffer) {
     decArr.push(parseInt(textByte, 10));
   });
 
-  decArr.forEach( num => {
+  decArr.forEach( (num, index) => {
     let hex = num.toString(16);
     if (hex.length === 1) {
       hex = '0' + hex;
     }
-    hexText += hex + ' ';
+    hexText += `<span title="address: ${index.toString(16)}">${hex}</span> `;
   });
   // remove the last comma and space
   hexText = hexText.slice(0, -1);
   // show the hex div
   hex.classList.add('show');
 
-  hex.textContent = hexText.toUpperCase();  
+  hex.innerHTML = hexText.toUpperCase();  
 }

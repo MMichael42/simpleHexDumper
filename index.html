@@ -9,9 +9,15 @@
 </head>
 <body>
   <div id="container">
-    <input id="romUploader" type="file">
+    <input class="inputFile" id="romUploader" type="file" />
+    <label id="uploadBtn" for="romUploader">upload a file</label>
+
     <div id="status"></div>
+    <div id="info">
+      Hover over each byte to see address offset.
+    </div>
     <div class="dataBox" id="hex"></div>
+    
   </div>
   <script src="hex.js"></script>
 </body>

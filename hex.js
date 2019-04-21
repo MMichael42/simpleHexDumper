@@ -3,6 +3,7 @@ console.log('hello world');
 const hex = document.querySelector('#hex');
 const status = document.querySelector('#status');
 const fileUploadInput = document.querySelector('#romUploader');
+const info = document.querySelector('#info');
 
 fileUploadInput.addEventListener('change', function(e) {
   const reader = new FileReader();
@@ -58,6 +59,7 @@ function loadRom(arrayBuffer) {
   hexText = hexText.slice(0, -1);
   // show the hex div
   hex.classList.add('show');
+  info.style.display = 'block';
 
   hex.innerHTML = hexText.toUpperCase();  
 }

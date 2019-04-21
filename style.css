@@ -5,6 +5,15 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.inputFile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	/* position: absolute; */
+	z-index: -1;
+}
+
 .dataBox {
   display: none;
   border: 1px solid rgba(0, 0, 0, 0.315);
@@ -26,9 +35,28 @@ body {
 
 #romUploader {
   border: 0px solid black;
-  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+
+#uploadBtn {
+  border: 1px solid black;
+  padding: 15px;
+  cursor: pointer;
+}
+#uploadBtn:hover {
+  background-color: black;
+  color: white;
 }
 
 #status {
   padding: 20px;
+  margin-top: 10px;
+}
+
+#info {
+  display: none;
+  padding: 20px;
+  padding-top: 0px;
 }

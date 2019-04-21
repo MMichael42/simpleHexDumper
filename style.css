@@ -33,9 +33,15 @@ body {
   padding: 20px;
 }
 
+#header {
+  border: 0px solid black;
+  padding: 0px;
+  padding-left: 20px;
+}
+
 #romUploader {
   border: 0px solid black;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 0px;
   padding: 5px;
 }

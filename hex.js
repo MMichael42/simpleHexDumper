@@ -18,10 +18,8 @@ fileUploadInput.addEventListener('change', function(e) {
   reader.readAsArrayBuffer(fileUploadInput.files[0]);
 
   reader.onload = () => {
-    console.log(reader.result);
     loadRom(reader.result);
   }
-  
 });
 
 function loadRom(arrayBuffer) {
@@ -53,7 +51,7 @@ function loadRom(arrayBuffer) {
     if (hex.length === 1) {
       hex = '0' + hex;
     }
-    hexText += `<span title="address: ${index.toString(16)}">${hex}</span> `;
+    hexText += `<span class="spanHex" title="address: ${index.toString(16)}">${hex} </span>`;
   });
   // remove the last comma and space
   hexText = hexText.slice(0, -1);
@@ -62,4 +60,13 @@ function loadRom(arrayBuffer) {
   info.style.display = 'block';
 
   hex.innerHTML = hexText.toUpperCase();  
+}
+
+// function that calcs the number of bytes per line so we can put the address offset into a div on the left of the hex data div
+function calcAddressOffsetDiv(numOfBytes) {
+  // width of hex div - 40px (for the padding)
+  // then divide that by width of spanHex
+  // that should equal the number of bytes per line
+  // get the number of bytes (numOfBytes), divide that by bytes per line
+  // that should equal the number of address offets we'll list
 }
